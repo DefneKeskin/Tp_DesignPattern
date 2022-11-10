@@ -22,6 +22,12 @@ public class Book extends Item {
 	public String toString() {
 		return "Book{" + super.toString() + ", author=" + author + '}';
 	}
+
+
+	public void accept(ItemVisitor v) {
+		// 2° Dispatch : en fonction du type statique de this (MyModem)
+		v.visit(this);
+	}
 	
 	
 }
